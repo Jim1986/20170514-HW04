@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+    <P>找出當年的第幾天</P>
+    <input type="text" id="month" style=width:75px>月
+    <input type="text" id="date" style=width:75px>日
+    <button type="button" id="button">click</button>
+    <script>
+        $("#button").click( function() {
+            // $("#answer").empty();
+            var m = $("#month").prop("value");
+            var n = $("#date").prop("value");
+            // console.log(m);
+            var a = (m-1) * 31 + n*1/1;
+            // console.log(a);
+            if ( m > 2) { a -= 3}
+            if ( m > 4) { a -= 1}
+            if ( m > 6) { a -= 1}
+            if ( m > 9) { a -= 1}
+            if ( m > 11) { a -= 1}
+            $("#answer").append( "今年的第 " + a + " 天" + "<br>")
+        })
+    </script>
+    <hr>
+    <p>Answer：</p>
+    <div id="answer"></div>
+</body>
+</html>
